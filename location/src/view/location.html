@@ -69,15 +69,17 @@
                         var routes = e.routes;
                         var i = 0;
                         //console.log(routes);
-                        console.log(e.routes[0].coordinates); 
-                        console.log(e.routes[0].instructions);
+                        console.log(e.routes); 
+                        console.log(e.routes[0]); 
+                        //console.log(e.routes[0].coordinates); 
+                        //console.log(e.routes[0].instructions);
                         e.routes[0].coordinates.forEach(function (coord, index) {
                             //console.log(coord);
                             setTimeout(function () {
                                 i +=1;
                                 marker.setLatLng([coord.lat, coord.lng]);
                                 if (i == e.routes[0].coordinates.length) {
-                                    marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+                                    marker.bindPopup("<b>"+e.routes[0].name+"</b><br>vous etes bien arrivé.").openPopup();
                                 } else {
                                     console.log(i);
                                     marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
