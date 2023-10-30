@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Geolocation</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.css"
+    />
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <!-- Make sure you put this AFtER leaflet.js, when using with leaflet -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.umd.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/Style/generality.css">
+    <link rel="stylesheet" href="assets/Style/device.css">
+    <link rel="stylesheet" href="assets/Style/meteo.css">
+    <link rel="stylesheet" href="assets/Style/carousel.css">
+    <link rel="stylesheet" href="assets/Style/style_1.css">
+    <link rel="stylesheet" href="assets/Style/chargement_valide.style.css">
+
+</head>
+
+<body>
+    <div class="user">
+        <div class="left_user">
+            <div class="image">
+                <img src="assets/icons/user_logo.png" alt="">
+            </div>
+            <div class="identification">
+                <span>Bienvenu</span>
+                <small>Techlead@gmail.com</small>
+            </div>
+        </div>
+        <div class="localisation">
+            <i class="fa fa-street-view"></i>
+        </div>
+    </div>
+    
+    <div class="sibar_left">
+        <div class="menu_left">
+            <div class="imag_logo">
+                <img src="assets/icons/logo_transparent.png" alt="">
+            </div>
+            <div class="btn_center">
+                <div class="btnMenu">
+                    <button class="menuBtn active">
+                        <div class="pointure"></div>
+                        <i class="fa fa-home"></i>
+                        <div class="itme_btn">
+                            <small>Home</small>
+                        </div>
+                    </button>
+                    <button class="menuBtn">
+                        <div class="pointure"></div>
+                        <i class="fa fa-users"></i>
+                        <div class="itme_btn">
+                            <small>Nos partenaires</small>
+                        </div>
+                    </button>
+                    <button class="menuBtn">
+                        <div class="pointure"></div>
+                        <i class="fa fa-opencart"></i>
+                        <div class="itme_btn">
+                            <small>Nos services</small>
+                        </div>
+                    </button>
+                    <button class="menuBtn">
+                        <div class="pointure"></div>
+                        <i class="fa fa-dashboard"></i>
+                        <div class="itme_btn">
+                            <small>Votre tableau de bord</small>
+                        </div>
+                    </button>
+                    <button class="menuBtn">
+                        <div class="pointure"></div>
+                        <i class="fa fa-history"></i>
+                        <div class="itme_btn">
+                            <small>Historique des vos demandes</small>
+                        </div>
+                    </button>
+                    <button class="menuBtn">
+                        <div class="pointure"></div>
+                        <i class="fa fa-cog"></i>
+                        <div class="itme_btn">
+                            <small>Parametrage</small>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="btn_bottom">
+                <div class="btnMenu">
+                    <button class="menuBtn_arrow">
+                        <div class="btn_row">
+                            <i class="fa fa-angle-left"></i>
+                        </div>
+                    </button>
+                    <button class="menuBtn_arrow">
+                        <div class="btn_row">
+                            <i class="fa fa-qrcode"></i>
+                        </div>
+                    </button>
+                    <button class="menuBtn active">
+                        <div class="pointure"></div>
+                        <i class="fa fa-whatsapp"></i>
+                        <div class="itme_btn">
+                            <small>Whatsapp</small>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div class="image">
+                    <img src="assets/icons/logo_carcar.png" alt="">
+                </div>
+                <div class="left">
+                    <span>Car Care</span>
+                    <small>Le temps est un luxe !</small>
+                </div>
+            </div>
+            <div class="body">
+                <div class="headerB">
+                    <span>service Car Care</span>
+                    <div class="logo">
+                        <img src="assets/icons/logo_transparent.png" alt="">
+                    </div>
+                </div>
+                <div class="contenu">
+                    <div class="menu">
+                        <div class="btn">
+                            <div class="imagebtn">
+                                <img src="assets/svg/diagnostique.svg" alt="">
+                            </div>
+                            <span>Diagnostique</span>
+                            <div class="pointeur"></div>
+                            <div class="pointeur_car">
+                                <img src="assets/svg/carcare.svg" alt="">
+                            </div>
+                            <div class="float">
+                                <span>Diagnostique du Vehicule</span>
+                            </div>
+                        </div>
+                        <div class="btn">
+                            <div class="imagebtn">
+                                <img src="assets/svg/remplacement_vehicule.svg" alt="">
+                            </div>
+                            <span>Remplacement</span>
+                            <div class="pointeur"></div>
+                            <div class="pointeur_car">
+                                <img src="assets/svg/carcare.svg" alt="">
+                            </div>
+                            <div class="float">
+                                <span>Vehicule de remplacement</span>
+                            </div>
+                        </div>
+                        <div class="btn">
+                            <div class="imagebtn">
+                                <img src="assets/svg/information_etap_etap.svg" alt="">
+                            </div>
+                            <span>Information</span>
+                            <div class="pointeur"></div>
+                            <div class="pointeur_car">
+                                <img src="assets/svg/carcare.svg" alt="">
+                            </div>
+                            <div class="float">
+                                <span>Diagnostique du Vehicule</span>
+                            </div>
+                        </div>
+                        <div class="btn">
+                            <div class="imagebtn">
+                                <img src="assets/svg/rendez_vous.svg" alt="">
+                            </div>
+                            <span>Rendez-vous</span>
+                            <div class="pointeur"></div>
+                            <div class="pointeur_car">
+                                <img src="assets/svg/carcare.svg" alt="">
+                            </div>
+                            <div class="float">
+                                <span>Rendez-vous</span>
+                            </div>
+                        </div>
+                        <div class="btn">
+                            <div class="imagebtn">
+                                <img src="assets/svg/resitution_vehicule.svg" alt="">
+                            </div>
+                            <span>Restitution</span>
+                            <div class="pointeur"></div>
+                            <div class="pointeur_car">
+                                <img src="assets/svg/carcare.svg" alt="">
+                            </div>
+                            <div class="float">
+                                <span>Restitution du Vehicule</span>
+                            </div>
+                        </div>
+                        <div class="btn">
+                            <div class="imagebtn">
+                                <img src="assets/svg/getcar.svg" alt="">
+                            </div>
+                            <span>Recupération</span>
+                            <div class="pointeur"></div>
+                            <div class="pointeur_car">
+                                <img src="assets/svg/carcare.svg" alt="">
+                            </div>
+                            <div class="float">
+                                <span>Recupération du véhicule</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom_body">
+                        <div class="cadreCarousel">
+                            <div class="service_car">
+                                <span>Type d'abonnement</span>
+                                <div class="image">
+                                    <img src="assets/svg/information_etap_etap.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="carousel-container">
+                                <div class="carousel">
+                                    <div class="carousel-item">Slide 1</div>
+                                    <div class="carousel-item">Slide 2</div>
+                                    <div class="carousel-item">Slide 3</div>
+                                    <div class="carousel-item">Slide 4</div>
+                                </div>
+                            </div>
+                            <div class="controls">
+                                <button class="btnCarousel btnNext" >
+                                    <i class="fa fa-chevron-left "></i>
+                                </button>
+                                <button class="btnCarousel btnPres" >
+                                    <i class="fa fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="indicators"></div>
+                        </div>
+                        <div class="cadreCarousel_2">
+                            <div class="service_car">
+                                <span>Type d'abonnement</span>
+                                <div class="image">
+                                    <img src="assets/svg/information_etap_etap.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="carousel_2-container">
+                                <div class="carousel_2">
+                                    <div class="carousel-item">Slide 1</div>
+                                    <div class="carousel-item">Slide 2</div>
+                                    <div class="carousel-item">Slide 3</div>
+                                    <div class="carousel-item">Slide 4</div>
+                                </div>
+                            </div>
+                            <div class="controls">
+                                <button class="btnCarousel btnNext" >
+                                    <i class="fa fa-chevron-left "></i>
+                                </button>
+                                <button class="btnCarousel btnPres" >
+                                    <i class="fa fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="indicators"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right_swag">
+            <div class="btn_menu_side">
+                <button class="btn_bar">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <button class="btn_bar">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+            <div class="center_menu">
+                <div class="logo_carcare">
+                    <img src="assets/icons/logo_transparent.png" alt="">
+                </div>
+                <div class="liste_btn">
+                    <button class="menuBtn activebtn">
+                        <div class="centerbtn">
+                            <div class="pointure"></div>
+                            <i class="fa fa-map-pin"></i>
+                        </div>
+                        <div class="itme_btn">
+                            <small>Afficher les services dans la cart</small>
+                        </div>
+                    </button>
+                    <button class="menuBtn">
+                        <div class="centerbtn">
+                            <div class="pointure"></div>
+                            <i class="fa fa-map-o"></i>
+                        </div>
+                        <div class="itme_btn">
+                            <small>Afficher les services dans votre postion</small>
+                        </div>
+                    </button>
+                    <button class="menuBtn">
+                        <div class="centerbtn">
+                            <div class="pointure"></div>
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <div class="itme_btn">
+                            <small>Afficher le services le plus proche de vous</small>
+                        </div>
+                    </button>
+                    <button class="menuBtn">
+                        <div class="centerbtn">
+                            <div class="pointure"></div>
+                            <i class="fa fa-map-signs"></i>
+                        </div>
+                        <div class="itme_btn">
+                            <small>Afficher les services que vous avez l'habitude de faire recour</small>
+                        </div>
+                    </button>
+                    <button class="menuBtn">
+                        <div class="centerbtn">
+                            <div class="pointure"></div>
+                            <i class="fa fa-star-half-o"></i>
+                        </div>
+                        <div class="itme_btn">
+                            <small>Afficher les mieux notés</small>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="location_live">
+                <div class="liveadd">
+                    <button class="btn_locaton">
+                        <i class="fa fa-street-view"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center_content">
+        <div class="contente_slider">
+            <div class="btnclose">
+                <i class="fa fa-close"></i>
+            </div>
+            <div class="container">
+                <div class="left-info">
+                    <div class="pic-gradient"></div>
+                    <div class="today-info">
+                        <h2>Friday</h2>
+                        <span>28 July 2023</span>
+                        <div class="contry">
+                            <i class='bx bx-current-location'></i>
+                            <span>Paris, FR</span>
+                        </div>
+                    </div>
+                    <div class="today-weather">
+                        <div class="temperator">
+                            <i class='bx bx-sun'></i>
+                            <h1 class="weather-temp">
+                                25°C
+                            </h1>
+                        </div>
+                        <h3>Sunny</h3>
+                    </div>
+                </div>
+        
+                <div class="right-info">
+                    <div class="day-info">
+                        <div>
+                            <span class="title">PRECIPITATION</span>
+                            <span class="value">4 %</span>
+                        </div>
+                        <div>
+                            <span class="title">HUMIDITY</span>
+                            <span class="value">34 %</span>
+                        </div>
+                        <div>
+                            <span class="title">WIND SPEED</span>
+                            <span class="value">6 km/h</span>
+                        </div>
+                    </div>
+        
+                    <ul class="days-list">
+                        <li>
+                            <i class='bx bx-cloud'></i>
+                            <span>Sat</span>
+                            <span class="day-temp">23°C</span>
+                        </li>
+                        <li>
+                            <i class='bx bx-sun'></i>
+                            <span>Sun</span>
+                            <span class="day-temp">28°C</span>
+                        </li>
+                        <li>
+                            <i class='bx bx-cloud-rain'></i>
+                            <span>Mon</span>
+                            <span class="day-temp">02°C</span>
+                        </li>
+                        <li>
+                            <i class='bx bx-cloud-drizzle'></i>
+                            <span>Tue</span>
+                            <span class="day-temp">14°C</span>
+                        </li>
+                    </ul>
+                </div>
+        
+            </div>
+            <div class="Bcard">
+                <div class="Bpill">
+                    <div class="Blevel">
+                        <div class="Bliquid"></div>
+                    </div>
+                </div>
+                <div class="Bdata">
+                    <p class="Btext">Battery </p>
+                    <h1 class="Bpercentage">20%</h1>
+                    <p class="Bstatus">
+                        <i class="ri-plug-line"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right_icons">
+        <div class="btnRight">
+            <i class="fa fa-eye-slash"></i>
+        </div>
+    </div>
+    <div id="weathermap">
+        <div id="map" style="width:100%; height: 100vh"></div>
+    </div>
+
+
+    <script src="assets/js/location_b.js"></script>
+    <script src="assets/js/carousel.js"></script>
+    <script src="assets/js/meteo.js"></script>
+    <script src="assets/js/device.js"></script>
+</body>
+
+</html>

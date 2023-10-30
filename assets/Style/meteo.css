@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+.container{
+    height: 100%;
+    width: 26rem;
+    background-color: #232931;
+    color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    margin-right: .3rem;
+}
+
+.left-info{
+    width: 180px;
+    height: 100%;
+    float: left;
+    display: flex;
+    border-radius: 25px;
+    justify-content: center;
+    background: url("../image/monument_night.jpg");
+    background-position: center;
+    background-size: cover;
+    transform: scale(1.03) perspective(200px);
+    cursor: pointer;
+    box-shadow: 0 0 20px -10px rrgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.left-info h2,
+.left-info span
+{
+    font-size: 1rem;
+}
+
+.left-info .contry{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-info:hover{
+    transform: scale(1.1) perspective(2500px) rotateY(5deg);
+}
+
+.pic-gradient{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, #5c6bc0 10%, #0d47a1 100%);
+    border-radius: 25px;
+    opacity: 0.5;
+}
+
+.today-info{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-top: .3rem;
+}
+
+.today-weather{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 1rem;
+    width: 100%;
+    align-items: center;
+}
+
+.today-weather .bx{
+    font-size: 2rem;
+}
+
+.weather-temp,
+.today-weather h3{
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.temperator{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+}
+
+.right-info{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+    padding-top: 15px;
+    align-items: center;
+}
+
+.day-info{
+    display: flex;
+    width: 13rem;
+    justify-content: space-around;
+}
+
+.day-info div:not(:last-child){
+    margin-bottom: 6px;
+}
+
+.day-info div .title{
+    font-weight: 700;
+    font-size: .55rem;
+}
+
+.day-info div .value{
+    float: right;
+}
+
+.days-list{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    width: 13.5rem;
+    padding: 0.4rem 
+}
+
+.days-list li{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    padding: 0 .1rem;
+}
+
+.days-list li .bx{
+    margin-bottom: 5px;
+    font-size: 1rem;
+    color: var(--color-light);
+}
+
+.days-list li:hover{
+    transform: scale(1.1);
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+
+.days-list li:hover .bx,
+.days-list li:hover span
+{
+    color: #222831;
+}
+
+.days-list li .day-temp{
+    margin-top: 6px;
+    font-weight: 700;
+    font-size: .6rem;
+}
+
+.btn-container{
+    padding: 25px 35px;
+}
+
+.loc-button{
+    outline: none;
+    width: 100%;
+    border: none;
+    font-weight: 700;
+    border-radius: 25px;
+    padding: 10px;
+    background: #303f9f;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    transition: all 0.3s ease;
+}
+
+.loc-button:hover{
+    background: #1a237e;
+}
